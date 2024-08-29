@@ -11,6 +11,9 @@ tar -zxf $version.tar.gz
 tar -zxf dist.tar.gz
 rm -rf alist-${version#v}/public/dist/*
 cp dist/index.html alist-${version#v}/public/dist
+cp build.sh alist-${version#v}
+chmod +x alist-${version#v}/build.sh
+rm -rf dist
 
 # Install dependencies
 # sudo snap install zig --classic --beta
@@ -37,5 +40,5 @@ for i in "${FILES[@]}"; do
 done
 
 # build
-bash build.sh release
-bash build.sh release linux_musl
+# build.sh release
+# build.sh release linux_musl
